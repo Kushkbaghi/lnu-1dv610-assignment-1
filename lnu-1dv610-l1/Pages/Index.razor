@@ -1,0 +1,25 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<section class="index">
+    <h1>1dv610-L1</h1>
+
+    <h2>Hej!👋 <br /> >What's your name?</h2>
+    <h3>@WelcomeMessage</h3>
+
+    <div>
+        <input class="input" type="text" @bind="UserName" />
+        <button class="btn btn-primary" @onclick="Submit">Submit</button>
+    </div>
+</section>
+
+@code {
+    private string WelcomeMessage = ""; // Corrected variable name
+    private string UserName { get; set; }
+
+    private void Submit()
+    {
+        WelcomeMessage = $"Hej {UserName}";
+    }
+}
